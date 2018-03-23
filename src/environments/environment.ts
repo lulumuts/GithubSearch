@@ -5,4 +5,5 @@
 
 export const environment = {
   production: false
+  apiUrl: "https://api.github.com/users/daneden?access_token=7cc1e91492e05cb87cb0afbd9a40bffa2cc90054"
 };
