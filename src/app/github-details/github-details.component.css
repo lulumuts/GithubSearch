@@ -1,3 +1,11 @@
 .container{
   margin-top: 10vh;
+  margin-left: 10vw;
+}
+
+p{
+  text-align: left;
+}
+h4{
+  text-align: left;
 }

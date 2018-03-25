@@ -9,13 +9,15 @@ import {HttpClient} from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { GithubComponent } from './github/github.component';
 import { GithubDetailsComponent } from './github-details/github-details.component';
+import { ReposComponent } from './repos/repos.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     GithubComponent,
-    GithubDetailsComponent
+    GithubDetailsComponent,
+    ReposComponent
   ],
   imports: [
     BrowserModule,

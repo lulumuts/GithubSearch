@@ -28,7 +28,7 @@ export class GithubRequestService {
         this.search.avatar_url=response.avatar_url
 
         resolve()
-      },
+      
       error=>{
         this.search.login="NONE"
         this.search.name="NONE"
