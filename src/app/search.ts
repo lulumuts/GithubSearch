@@ -1,3 +1,5 @@
 export class Search {
-  constructor(public name:string, public bio:string, public url:string, public image:string)
+  constructor(public login:string, public bio:string, public repos_url:string, public avatar_url:string){}
+  }
+
 }

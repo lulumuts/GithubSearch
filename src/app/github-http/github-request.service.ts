@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http'
 import { environment } from '../../environments/environment'
-import {Search} from './search'
+import {Search} from '../search'
 
 @Injectable()
 export class GithubRequestService {
@@ -14,29 +14,33 @@ export class GithubRequestService {
   githubRequest(){
 
     interface ApiResponse{
-      name:string;
+      login:string;
       bio:string;
-      url:string;
-      image:string
+      repos_url:string;
+      avatar_url:string;
     }
     let promise =new Promise((resolve,reject)=>{
-      this.http.get<ApiResponse>(environment.apiUrl).toPromise().then(response=>{
+      this.http.get<ApiResponse>("https://api.github.com/users/"+this.name +"access_token="+ environment.access_token)
 
-        this.search.name=response.name
+        this.search.login=response.login
         this.search.bio=response.bio
-        this.search.url=response.url
-        this.search.image=response.url
+        this.search.repos_url=response.repos_url
+        this.search.avatar_url=response.avatar_url
 
         resolve()
-        this.search.name="NONE"
-        this.search.bio="NONE"
-        this.search.url="NONE"
-        this.search.image="NONE"
       },
       error=>{
+        this.search.login="NONE"
+        this.search.bio="NONE"
+        this.search.repos_url="NONE"
+        this.search.avatar_url="NONE"
+        reject(error)
 
-      })
-    })
+      }
+    )
+      return promise;
   }
 
+
+  }
 }
