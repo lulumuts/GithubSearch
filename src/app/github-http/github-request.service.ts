@@ -15,7 +15,7 @@ export class GithubRequestService {
 
     interface ApiResponse{
       login:string;
-      bio:string;
+      name:string;
       repos_url:string;
       avatar_url:string;
     }
@@ -23,7 +23,7 @@ export class GithubRequestService {
       this.http.get<ApiResponse>("https://api.github.com/users/"+this.name +"access_token="+ environment.access_token)
 
         this.search.login=response.login
-        this.search.bio=response.bio
+        this.search.name=response.name
         this.search.repos_url=response.repos_url
         this.search.avatar_url=response.avatar_url
 
@@ -31,7 +31,7 @@ export class GithubRequestService {
       },
       error=>{
         this.search.login="NONE"
-        this.search.bio="NONE"
+        this.search.name="NONE"
         this.search.repos_url="NONE"
         this.search.avatar_url="NONE"
         reject(error)
@@ -43,4 +43,3 @@ export class GithubRequestService {
 
 
   }
-}
