@@ -12,11 +12,20 @@ import {GithubRequestService} from '../github-http/github-request.service';
 export class ReposComponent implements OnInit {
   repos:Repos;
 
-  constructor() { }
+  constructor(private http:HttpClient) { }
   showRepos(){
     this.reposService.getRepos().subscribe(data => this.repos)
   }
   ngOnInit() {
-  }
+    interface ApiResponse{
+      name:string,
+      url:string
+    }
+    this.http.get("https://api.github.com/users/lulumuts/repos?access_token=7cc1e91492e05cb87cb0afbd9a40bffa2cc90054").subscribe(data=>{
+      this.repos=new Repos(data[0].name,data[0].url)
 
+    }
+  })
+
+    }
 }
