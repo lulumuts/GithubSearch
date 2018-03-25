@@ -20,12 +20,8 @@ export class GithubRequestService {
       avatar_url:string;
     }
     let promise =new Promise((resolve,reject)=>{
-      this.http.get<ApiResponse>("https://api.github.com/users/"+this.name +"access_token="+ environment.access_token)
+      this.http.get<ApiResponse>("https://api.github.com/users/lulumuts/repos?access_token=7cc1e91492e05cb87cb0afbd9a40bffa2cc90054")
 
-        this.search.login=response.login
-        this.search.name=response.name
-        this.search.repos_url=response.repos_url
-        this.search.avatar_url=response.avatar_url
 
         resolve()
 

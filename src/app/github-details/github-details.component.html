@@ -4,13 +4,11 @@
     <blockquote class="text-center text-lg">
 
       <h4>Name:</h4>
-      <p>{{search.name}}</p>
+      <p>{{search?.name}}</p>
       <h4>Username:</h4>
-      <p>{{search.login}}</p>
-      <h4>Repositories:</h4>
-      <p>{{search.repos_url}}</p>
-
-      <li>{{search.avatar_url}}</li>
+      <p>{{search?.login}}</p>
+      <h4>Links</h4>
+      <p>{{search?.repos_url}}</p>
 
     </blockquote>
   </div>
