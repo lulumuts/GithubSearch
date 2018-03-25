@@ -1,7 +1,9 @@
 <h3>
   Repositories
 </h3>
+<div *ngFor="let repo of repos;let i= 'index' ">
 <ul>
-<li>{{repos.name}}</li>
-<li>{{repos.url}}</li>
+<li>{{Object.name}}</li>
+<li>{{Object.url}}</li>
 </ul>
+</div>
