@@ -23,7 +23,8 @@ import { ReposComponent } from './repos/repos.component';
   imports: [
     BrowserModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    
 
   ],
   providers: [],
